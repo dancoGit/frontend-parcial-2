@@ -1,0 +1,16 @@
+.input {
+  border-radius: 6px;
+  border: 1px solid green;
+  font-size: 20px;
+  padding: 8px 8px; line-height: 10px;
+  color: yellow;
+  background-color: rgba(51, 170, 51, .1);
+  width: 90%;
+  margin: 10px 0px 10px 0px;
+  outline: none;
+}
+
+.input:hover, .input:focus {
+  border: 1px solid green;
+  box-shadow: 0 0 4px 2px rgb(60, 255, 0) !important;
+}

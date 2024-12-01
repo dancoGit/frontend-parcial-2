@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'rickAndMorty';
+  src: url('../../assets/font/get_schwifty.ttf') format('truetype');
+}
+
+.label {
+  font-family: rickAndMorty;
+  color: #06B0C6;
+  padding-right: 10px;
+}
