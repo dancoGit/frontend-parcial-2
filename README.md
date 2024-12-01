@@ -25,14 +25,14 @@ npm run dev
 ## Diseño de la aplicación
 Es un proyecto que está echo en React.js que contiene los siguientes temas:
 1. Hooks
- * useState
- * useEffect
- * createContext
+    * useState
+    * useEffect
+    * createContext
 2. Componentes
 3. Uso de props
 4. Estructura de carpetas
 5. Router
- * Rutas normales
- * Rutas dinámicas
+    * Rutas normales
+    * Rutas dinámicas
 6. Formularios
 7. Testing básico
