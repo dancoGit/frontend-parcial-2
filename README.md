@@ -1,8 +1,38 @@
-# React + Vite
+![alt Homepage](./src/assets/img/home-readme.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Proyecto final de Front end 3
 
-Currently, two official plugins are available:
+## Desarrollador
+- Daniel Cortés (dancoweb@gmail.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnología
+
+- [node.js v22.9.0](https://nodejs.org/en/download/prebuilt-installer/current)
+- [react.js v18.3.1](https://react.dev/learn/installation)
+
+## Compilación y ejecución de la aplicación local
+
+Vaya a la carpeta del proyecto y escriba el siguiente comando para instalar todos los paquetes npm
+```bash
+npm install
+```
+
+Para ejecutar la aplicación, escriba el siguiente comando
+```bash
+npm run dev
+```
+
+## Diseño de la aplicación
+Es un proyecto que está echo en React.js que contiene los siguientes temas:
+1. Hooks
+ * useState
+ * useEffect
+ * createContext
+2. Componentes
+3. Uso de props
+4. Estructura de carpetas
+5. Router
+ * Rutas normales
+ * Rutas dinámicas
+6. Formularios
+7. Testing básico
