@@ -25,14 +25,20 @@ body {
 
 .containerForms {
   width: 700px;
-  height: 300px;
   border-radius: 25px;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 0 4px 2px rgb(60, 255, 0) !important;
   padding: 20px 0px 20px;
+  box-shadow: 0 0 4px 2px rgb(60, 255, 0) !important;
 }
 
+.autenticationForm {
+  height: 300px;
+}
+
+.formRegister {
+  height: 450px;
+}
 
 .title {
   display: flex;
@@ -44,9 +50,7 @@ body {
 .form {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   width: 50%;
-  /* border: 1px solid yellow; */
 }
 
 .image {
@@ -54,12 +58,29 @@ body {
   flex-direction: column;
   align-items: center;
   width: 50%;
-  /* border: 1px solid blue; */
 }
 
 .logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* width: 50%; */
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 80px;
+  text-transform: capitalize;
+  font-size: 20px;
+  word-spacing: 10px; 
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+
+  color: white;
 }

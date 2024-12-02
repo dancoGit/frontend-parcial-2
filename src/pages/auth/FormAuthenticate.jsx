@@ -15,7 +15,7 @@ const FormAuthenticate = () => {
         <InputComponent type="email" id="email" name="email" />
 
         <LabelComponent label="Contraseña" htmlFor="password" />
-        <InputComponent type="password" id="password" name="password"/>
+        <InputComponent type="password" id="password" name="password" />
         <ButtonSubmitComponent label="Iniciar sesión" />
         <div>
           <LabelComponent label="Mmm sin cuenta ... " fontSize="15px" />

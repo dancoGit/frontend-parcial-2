@@ -1,6 +1,9 @@
 @font-face {
   font-family: 'rickAndMorty';
-  src: url('../../assets/font/get_schwifty.ttf') format('truetype');
+  /* src: url('../../assets/font/get_schwifty.ttf') format('truetype'); */
+  src: url('../../assets/font/WubbaLubbaDubDub.ttf') format('truetype');
+
+/* } */
 }
 
 .label {

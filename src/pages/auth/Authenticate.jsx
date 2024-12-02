@@ -23,7 +23,7 @@ const Authenticate = () => {
               />
             </h1>
           </div>
-          <div className={styles.containerForms}>
+          <div className={styles.containerForms  + " " + (isAuthenticate ? styles.autenticationForm : styles.formRegister)}>
             <div className={styles.image}>
               {isAuthenticate ? (
                 <>
@@ -41,6 +41,11 @@ const Authenticate = () => {
           </div>
         </div>
       </main>
+      <footer>
+        <div className={styles.footer}>
+          digital-house {(new Date().getFullYear())} - Daniel Cortés
+        </div>
+      </footer>
     </>
   );
 };
