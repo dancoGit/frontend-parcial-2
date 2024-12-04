@@ -1,0 +1,28 @@
+.grid { 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+  margin: 15px;
+}
+
+.grid > article {
+  border: 1px solid rgb(60, 255, 0);
+  box-shadow: 0 0 10px rgb(68, 182, 33);
+}
+
+.grid > article img {
+  max-width: 100%;
+}
+
+.text {
+  padding: 0 20px 20px;
+}
+
+.text > button {
+  background: gray;
+  border: 0;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  }
