@@ -1,5 +1,5 @@
 export const getUsers = () => {
-  const db = localStorage.getItem("db");
+  const db = sessionStorage.getItem("db");
 
   return (db) ? Object.values(JSON.parse(db)) : [];
 }
@@ -17,17 +17,32 @@ export const saveUser = (user) => {
   let users = getUsers();
 
   if(userEmailExist(user.email)) {
-    console.log("mail encontrado")
     return false;
   }
   
-  console.log("push")
   users.push(user);
-
-  localStorage.setItem("db", JSON.stringify(users));
+  
+  sessionStorage.setItem("db", JSON.stringify(users));
   return true;
 }
 
-// export const addToFavorites = (card) = {
+export const authenticate = (user) => {
+  const users = getUsers();
 
-// }
+  let found = false;
+  
+  const usersUpdated = users.map((userDb) => {
+    if(userDb.email === user.email && userDb.password === user.password) {
+      userDb.token = crypto.randomUUID();
+      found = true;
+    }
+    return userDb
+  });
+
+  if(found) {
+    sessionStorage.setItem("db", JSON.stringify(usersUpdated));
+    return true;
+  } else {
+    return false;
+  }
+}

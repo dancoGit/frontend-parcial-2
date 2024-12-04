@@ -28,6 +28,7 @@ Es un proyecto que está echo en React.js que contiene los siguientes temas:
     * useState
     * useEffect
     * createContext
+    * useCallback
 2. Componentes
 3. Uso de props
 4. Estructura de carpetas
@@ -36,3 +37,16 @@ Es un proyecto que está echo en React.js que contiene los siguientes temas:
     * Rutas dinámicas
 6. Formularios
 7. Testing básico
+
+## Aplicativo
+
+1. Multi-usuario
+    * Al registrarse se genera un arreglo de usuarios y se guardan en el sessionStorage
+2. Notificaciones
+    * Las notificaciones se generaron con el componente de [sonner](https://sonner.emilkowal.ski/)
+4. Validaciones de:
+    * Usuario no registrado
+    * Usuario ya registrado
+5. Favoritos
+    * Se agregan y se eliminan con un botón
+    * Se valida duplicidad de personajes (para no agregar 2 veces el personaje)

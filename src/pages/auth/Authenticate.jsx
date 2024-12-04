@@ -41,11 +41,6 @@ const Authenticate = () => {
           </div>
         </div>
       </main>
-      <footer>
-        <div className={styles.footer}>
-          digital-house {(new Date().getFullYear())} - Daniel Cortés
-        </div>
-      </footer>
     </>
   );
 };

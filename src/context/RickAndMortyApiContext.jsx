@@ -1,9 +1,10 @@
-import {createContext, useContext, useEffect, useReducer } from "react";
+import {createContext, useContext, useEffect, useReducer, useState } from "react";
 import {getCharacters} from "../service/rickAndMortyApi.js";
+import { toast } from "sonner";
 
 const initialState = {
-	character: [],
-	cart: [],
+	characters: [],
+	favorites: [],
 };
 
 const apiReducer = (state, action) => {
@@ -11,17 +12,17 @@ const apiReducer = (state, action) => {
 		case "SET_CHARACTER":
 			return {
 				...state,
-				character: action.payload,
+				characters: action.payload,
 			};
-		case "ADD_TO_CART":
+		case "ADD_TO_FAVORITE":
 			return {
 				...state,
-				cart: [...state.cart, action.payload],
+				favorites: [...state.favorites, action.payload],
 			};
-		case "DELETE_TO_CART":
-			return {
-				...state,
-				cart: state.cart.filter((character) => character.id !== action.payload),
+			case "DELETE_TO_FAVORITE":
+				return {
+					...state,
+				favorites: state.favorites.filter((character) => character.id !== action.payload),
 			};
 	}
 };
@@ -30,16 +31,27 @@ const ApiContext = createContext();
 
 export const ApiProvider = ({children}) => {
 	const [state, dispatch] = useReducer(apiReducer, initialState);
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	
+	const addToFavorite = (character) => {
 
-	const addToCart = (character) => {
-		console.log("Agregar al carrito", character);
-		dispatch({ type: "ADD_TO_CART", payload: character });
+		if(isNotItDuplicate(character.id)) {
+			dispatch({ type: "ADD_TO_FAVORITE", payload: character });
+			toast.success(character.name + " agregado a favoritos!");
+		}
+	};
+	
+	const isNotItDuplicate = (id) => {
+		return state.favorites.filter((character) => character.id === id).length === 0 ? true : false;
+	}
+
+	const deleteToFavorite = (id) => {
+		dispatch({type: "DELETE_TO_FAVORITE", payload: id});
 	};
 
-	const deleteToCart = (id) => {
-		console.log("Eliminar del carrito", id);
-		dispatch({type: "DELETE_TO_CART", payload: id});
-	};
+	const handleIsLoggedIn = (isLoggedIn) => {
+		setIsLoggedIn(isLoggedIn);
+	}
 
 	useEffect(() => {
 		getCharacters().then((data) => {
@@ -50,10 +62,12 @@ export const ApiProvider = ({children}) => {
 	return (
 		<ApiContext.Provider
 			value={{
-				cart: state.cart,
-				addToCart,
-				deleteToCart,
-				characters: state.character,
+				favorites: state.favorites,
+				addToFavorite,
+				deleteToFavorite,
+				characters: state.characters,
+				isLoggedIn,
+				handleIsLoggedIn,
 			}}
 		>
 			{children}
