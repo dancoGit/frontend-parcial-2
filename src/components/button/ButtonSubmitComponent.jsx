@@ -1,14 +1,12 @@
-import styles from "./ButtonSubmitComponent.module.css"
+import styles from "./ButtonSubmitComponent.module.css";
 
-const ButtonSubmitComponent = ({label}) => {
+const ButtonSubmitComponent = ({ id, name, label }) => {
   return (
     <div>
-      <button
-       className={styles.button}
-       >
+      <button id={id} name={name} className={styles.button}>
         {label}
       </button>
     </div>
-  )
-}
-export default ButtonSubmitComponent
+  );
+};
+export default ButtonSubmitComponent;

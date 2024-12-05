@@ -1,6 +1,6 @@
 import styles from "./InputComponent.module.css";
 
-const InputComponent = ({ type, id, name, value, placeholder, onChange }) => {
+const InputComponent = ({ type, id, name, value, placeholder, onChange, role = "" }) => {
   return (
     <>
       <input
@@ -11,6 +11,7 @@ const InputComponent = ({ type, id, name, value, placeholder, onChange }) => {
         value={value}
         placeholder={placeholder}
         onChange={onChange}
+        role={role}
         required
       />
     </>

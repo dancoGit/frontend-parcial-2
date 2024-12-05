@@ -27,13 +27,21 @@ npm run dev
 
 ## Test
 
-Instalar dependencia
+Instalar dependencias
 
 ```bash
 npm install vitest happy-dom -D
 ```
 
-## Diseño de la aplicación
+```bash
+npm install @testing-library/react -D
+```
+
+```bash
+npm install @testing-library/user-event -D
+```
+
+## Rick and Morty
 
 Es un proyecto que está echo en React.js que contiene los siguientes temas:
 
@@ -48,6 +56,7 @@ Es un proyecto que está echo en React.js que contiene los siguientes temas:
 5. Router
    - Rutas normales
    - Rutas dinámicas
+   - 404 página
 6. Formularios
 7. Testing básico
 

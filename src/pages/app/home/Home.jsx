@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <NavBarLayout>
-      <main className={styles.grid}>
+      <main id="homeMainId" className={styles.grid}>
         {characters.map((character) => (
           <Card
             key={character.id}
