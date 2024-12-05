@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import LabelComponent from "../../components/label/LabelComponent";
 import LabelLinkComponent from "../../components/label/LabelLinkComponent";
 import styles from "./PageNotFound.module.css";
+import imgNotFound from "../../assets/img/pageNotFound.png";
 
 const PageNotFound = () => {
 
@@ -18,7 +19,7 @@ const PageNotFound = () => {
         fontSize="50px"
       ></LabelComponent>
       <div className={styles.image}>
-        <img src="./src/assets/img/pageNotFound.png" />
+        <img src={imgNotFound} />
       </div>
       <span>
         <LabelLinkComponent

@@ -1,4 +1,4 @@
-import {createContext, useContext, useEffect, useReducer, useState } from "react";
+import {createContext, useContext, useEffect, useReducer } from "react";
 import {getCharacters} from "../service/rickAndMortyApi.js";
 import { toast } from "sonner";
 
@@ -31,7 +31,6 @@ const ApiContext = createContext();
 
 export const ApiProvider = ({children}) => {
 	const [state, dispatch] = useReducer(apiReducer, initialState);
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	
 	const addToFavorite = (character) => {
 
@@ -49,10 +48,6 @@ export const ApiProvider = ({children}) => {
 		dispatch({type: "DELETE_TO_FAVORITE", payload: id});
 	};
 
-	const handleIsLoggedIn = (isLoggedIn) => {
-		setIsLoggedIn(isLoggedIn);
-	}
-
 	useEffect(() => {
 		getCharacters().then((data) => {
 			dispatch({type: "SET_CHARACTER", payload: data});
@@ -66,8 +61,6 @@ export const ApiProvider = ({children}) => {
 				addToFavorite,
 				deleteToFavorite,
 				characters: state.characters,
-				isLoggedIn,
-				handleIsLoggedIn,
 			}}
 		>
 			{children}

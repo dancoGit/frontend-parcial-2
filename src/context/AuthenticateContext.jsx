@@ -2,6 +2,7 @@ import { createContext, useContext, useState } from "react";
 import { saveUser, userEmailExist, authenticate } from "../service/db.js";
 import { useNavigate } from "react-router-dom";
 import { useApi } from "../context/RickAndMortyApiContext.jsx";
+import {logOut} from "../service/db.js";
 import { toast } from "sonner";
 
 const AuthenticateContext = createContext();
@@ -25,7 +26,7 @@ export const AuthenticateProvider = ({ children }) => {
     registerInitialValues
   );
 
-  const [authenticateData, setAauthenticateData] = useState(
+  const [authenticateData, setAuthenticateData] = useState(
     authenticateInitialValues
   );
 
@@ -33,11 +34,11 @@ export const AuthenticateProvider = ({ children }) => {
 
   const onSubmitAuthenticate = (e) => {
     e.preventDefault();
+    logOut();
     if (!authenticate(authenticateData)) {
       toast.info("Usuario no encontrado, favor de registrarse");
     } else {
-      setAauthenticateData(authenticateInitialValues);
-      handleIsLoggedIn(true);
+      setAuthenticateData(authenticateInitialValues);
       navigate("/home");
     }
   };
@@ -62,7 +63,7 @@ export const AuthenticateProvider = ({ children }) => {
 
   const handleAuthenticateChange = (event) => {
     event.preventDefault();
-    setAauthenticateData({
+    setAuthenticateData({
       ...authenticateData,
       [event.target.name]: event.target.value,
     });

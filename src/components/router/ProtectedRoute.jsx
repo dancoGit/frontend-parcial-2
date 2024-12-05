@@ -1,9 +1,7 @@
 import { Navigate } from "react-router-dom";
-import { useApi } from "../../context/RickAndMortyApiContext";
+import { isEmailLoggedIn } from "../../service/db";
 
 const ProtectedRoute = ({ children }) => {
-  const { isLoggedIn } = useApi();
-
-  return isLoggedIn ? children : <Navigate to="/" />;
+  return isEmailLoggedIn() ? children : <Navigate to="/" />;
 };
 export default ProtectedRoute;

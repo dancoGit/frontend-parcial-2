@@ -2,18 +2,17 @@ import styles from "./NavBar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import LabelComponent from "../../components/label/LabelComponent";
 import LabelLinkComponent from "../../components/label/LabelLinkComponent";
-import { useApi } from "../../context/RickAndMortyApiContext";
 import logo from "../../../src/assets/img/rick-and-morty-logo-4.png";
+import {logOut} from "../../service/db";
 
 const NavBar = () => {
   const fontSize = "25px";
 
   const navigate = useNavigate();
-  const { handleIsLoggedIn } = useApi();
 
   const onClickLogout = (event) => {
     event.preventDefault();
-    handleIsLoggedIn(false);
+    logOut();
     navigate("/");
   };
 
@@ -52,7 +51,7 @@ const NavBar = () => {
           <li>
             <Link to="/about">
               <LabelComponent
-                label="Acerca de ..."
+                label="Mis datos"
                 color="white"
                 fontSize={fontSize}
                 cursor="pointer"

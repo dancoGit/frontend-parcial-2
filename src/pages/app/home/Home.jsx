@@ -9,7 +9,7 @@ const Home = () => {
 
   function isItAFavorite(id) {
     let i = 0;
-    let len = favorites.length;
+    const len = favorites.length;
     let found = false;
 
     while (i < len) {
