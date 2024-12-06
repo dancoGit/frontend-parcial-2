@@ -1,8 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { saveUser, userEmailExist, authenticate } from "../service/db.js";
 import { useNavigate } from "react-router-dom";
-import { useApi } from "../context/RickAndMortyApiContext.jsx";
-import {logOut} from "../service/db.js";
+import { logOut } from "../service/db.js";
 import { toast } from "sonner";
 
 const AuthenticateContext = createContext();
