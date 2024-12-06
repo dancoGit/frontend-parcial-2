@@ -77,8 +77,6 @@ export const AuthenticateProvider = ({ children }) => {
     });
   };
 
-  const { handleIsLoggedIn } = useApi();
-
   return (
     <AuthenticateContext.Provider
       value={{
